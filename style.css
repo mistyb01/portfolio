@@ -7,8 +7,11 @@
 }
 
 :root {
-    --text-color: #1B376F;
-    --bg-color: #FFCCF1;
+    --text-color: #271F80;
+    --header-text: #FFCCF1;
+    --bg-color:  #B6BDFF;
+    --dark: #271F80;
+
 }
 
 body {
@@ -19,37 +22,53 @@ body {
 }
 
 header {
-    text-align: center;
     padding-top: 20px;
-    padding-bottom: 50px;
-    /*background-image: url('./img/testheader.png'); */
-    background-size: contain;
-    background-repeat:no-repeat;
-    /*background-color: rgb(191, 234, 255);*/
+    padding-bottom: 35px;
+    background-color: var(--dark);
+    color: var(--header-text);
+    --mask: 
+    linear-gradient(to top,#0000 14px,#000 0),
+    radial-gradient(14px,#000 98%,#0000) bottom/25.90px 28px;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
 
+header .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 
 }
 
-nav {
-    text-align: center;
-    margin: auto;
-    position: sticky;
-    top: 5px;
+
+nav ul {
+    
 }
 
 nav li {
-    margin-bottom: 10px;
-    border: 1px solid var(--text-color);
-    background-color: var(--bg-color);
-    padding: 5px 8px;
-    display: inline-block;
+    list-style: none;
+    background-color: var(--dark);
+    padding-left: 50px;
     transition: 0.5s;
 }
 
 nav a {
-    color: var(--text-color);
+    color: var(--header-text);
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 2rem;
+    line-height: 2;
+}
+
+nav li:hover {
+    background-color: rgba(255, 182, 193, 0.249);
+}
+
+.menu {
+    display: none;
+}
+
+.toggleBtn {
+    color: var(--header-text);
 }
 
 main {
@@ -73,4 +92,41 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: beige;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .menu{
+       display:block;
+    }
+    .toggleBtn{
+        display: none;
+    }
+
+    #top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-bottom: 25px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    nav li {
+        padding-left: 5px;
+        transition: 0.5s;
+    }
+    
+    nav a {
+        color: var(--header-text);
+        text-decoration: none;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+    
+
 }
