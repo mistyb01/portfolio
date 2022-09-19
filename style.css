@@ -49,7 +49,6 @@ nav li {
     list-style: none;
     background-color: var(--dark);
     padding-left: 50px;
-    transition: 0.5s;
 }
 
 nav a {
@@ -99,6 +98,7 @@ footer {
     .menu{
        display:block;
     }
+     
     .toggleBtn{
         display: none;
     }
@@ -113,12 +113,11 @@ footer {
     nav ul {
         display: flex;
         flex-direction: row;
-        gap: 20px;
+        column-gap: 20px;
     }
 
     nav li {
         padding-left: 5px;
-        transition: 0.5s;
     }
     
     nav a {
@@ -127,6 +126,17 @@ footer {
         font-size: 1.5rem;
         line-height: 1;
     }
+
+    section#about {
+        display: flex;
+        flex-direction: row;
+    }
+        section#about img {
+            flex-grow: 1;
+        }
     
+        .about-text-large {
+            flex-grow: 4;
+        }
 
 }
