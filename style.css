@@ -159,9 +159,11 @@ footer {
         opacity: 0.75;
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
     }
-
+    .project-card img:hover {
+        opacity: 1;
+    }
     .project-info {
         background-color: var(--accent);
         padding: 20px;
@@ -175,7 +177,82 @@ footer {
         margin-top: 20px;
     }
 
+    #gallery {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    #gallery img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    #image-full-screen {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.7);
+        position:fixed;
+        width:100%;
+        height:100%;
+        top:0px;
+        left:0px;
+        z-index:1000;
+        text-align: center;
+    }
+    
+    #image-full-screen img {
+        width: 75%;
+        height: auto;
+        margin-top: 3rem;
+    }
+    
+    #image-full-screen span {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        color: white;
+        font-size: 2.75rem;
+        opacity: 0.5;
+    }
+    
+    #image-full-screen span:hover {
+        opacity: 1;
+    }
+    
+    .fade-in {
+        opacity: 1;
+        animation-name: fadeInOpacity;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 0.25s;
+    }
+    .fade-out {
+        opacity: 1;
+        animation-name: fadeOutOpacity;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 0.25s;
+    }
+    
+    @keyframes fadeInOpacity {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeOutOpacity {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
 
+    
 @media only screen and (min-width: 768px) {
     section {
         width: 70%;
@@ -260,48 +337,6 @@ footer {
 
 }
 
-#gallery {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#gallery img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-#image-full-screen {
-    display: none;
-    background-color: rgba(0, 0, 0, 0.7);
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0px;
-    left:0px;
-    z-index:1000;
-    text-align: center;
-}
-
-#image-full-screen img {
-    width: 75%;
-    height: auto;
-    margin-top: 3rem;
-}
-
-#image-full-screen span {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    color: white;
-    font-size: 2.75rem;
-    opacity: 0.5;
-}
-
-#image-full-screen span:hover {
-    opacity: 1;
-}
 @media only screen and (min-width: 1024px) {
     #project-list {
         display: flex;
