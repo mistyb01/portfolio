@@ -19,7 +19,10 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: monospace;
+}
 
+p {
+    font-size: 1.25rem;
 }
 
 
