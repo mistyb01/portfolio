@@ -7,7 +7,7 @@
 
 :root {
     --text-color: #271F80;
-    --lighter-text-color: #48428b;
+    --lighter-text-color: #5d579d;
     --header-text: #FFCCF1;
     --bg-color:  #d8bdc8;
     --dark: #3d4c9f;
@@ -21,9 +21,6 @@ body {
     font-family: monospace;
 }
 
-p {
-    font-size: 1.25rem;
-}
 
 
 header {
@@ -83,22 +80,23 @@ nav li:hover {
 main {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 }
 
 section {
     width: 80%;
-    height: 80%;
-    margin: 20px auto;
+    margin: auto;
 }
 
 section#bio h1,
-section#projects h1{
-    font-size: 3em;
+section#projects h1,
+section#contact h1{
+    font-size: 2em;
     font-weight: 200;
     text-align: center;
-    border-bottom: 2px dotted var(--dark);
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 1rem;
     
 }
 
@@ -264,7 +262,6 @@ footer {
     section {
         width: 70%;
     }
-
     .menu{
        display:block;
     }
